@@ -1,6 +1,6 @@
 import { useContext, useEffect, useMemo } from 'react';
 
-import s from './Viewer.module.css';
+import s from './LensGuide.module.css';
 
 import { ProductContext } from '@/lib/utils/product-context';
 
@@ -24,9 +24,9 @@ export function Options() {
   }, [options, lens, setLens]);
 
   return (
-    <div className={s.viewer__options}>
+    <div className={s.lensGuide__options}>
       <select
-        className={s.viewer__optionsSelect}
+        className={s.lensGuide__optionsSelect}
         name='lenses'
         id='lenses'
         onChange={handleOptionChange}

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import s from './Viewer.module.css';
+import s from './LensGuide.module.css';
 
 import { ProductContext } from '@/lib/utils/product-context';
 
@@ -17,7 +17,7 @@ export function Scenes() {
   const Image = scene && baseImage && (
     <NextImage
       useSkeleton
-      className={s.viewer__image}
+      className={s.lensGuide__image}
       src={baseImage.src}
       sizes={baseImage.sizes}
       width={baseImage.width}
@@ -29,7 +29,7 @@ export function Scenes() {
   const Lens = lens && lensImage && <Overlay image={lensImage} />;
 
   const Scenes = scenes && (
-    <Thumbnails className={s.viewer__thumbnails}>
+    <Thumbnails className={s.lensGuide__thumbnails}>
       {scenes.map((thumbnail) => (
         <Thumbnails.Thumbnail
           key={thumbnail.sceneName}
@@ -44,7 +44,7 @@ export function Scenes() {
   );
 
   return (
-    <div className={s.viewer__scenes}>
+    <div className={s.lensGuide__scenes}>
       {Lens}
       {Image}
       {Scenes}

@@ -8,7 +8,7 @@ import { requestScenes } from '@/lib/utils/getScenes';
 
 import Layout from '@/components/layout/Layout';
 import Main from '@/components/Main';
-import { Viewer } from '@/components/Product';
+import { LensGuide } from '@/components/Product';
 import Seo from '@/components/Seo';
 
 type Props = {
@@ -31,10 +31,10 @@ export default function HomePage({ product, scenes }: Props) {
       <Seo templateTitle='Home' />
 
       <Main>
-        <Viewer product={product} scenes={scenes}>
-          <Viewer.Options />
-          <Viewer.Scenes />
-        </Viewer>
+        <LensGuide product={product} scenes={scenes}>
+          <LensGuide.Options />
+          <LensGuide.Scenes />
+        </LensGuide>
       </Main>
     </Layout>
   );

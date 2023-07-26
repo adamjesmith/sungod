@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import s from './Viewer.module.css';
+import s from './LensGuide.module.css';
 
 import { Option, Product } from '@/lib/types/product';
 import { Scene } from '@/lib/types/scenes';
@@ -9,13 +9,13 @@ import { ProductContext } from '@/lib/utils/product-context';
 import { Options } from './Options';
 import { Scenes } from './Scenes';
 
-interface ViewerProps {
+interface LensGuideProps {
   children?: React.ReactNode;
   product: Product;
   scenes: Scene[];
 }
 
-function Viewer({ children, product, scenes }: ViewerProps) {
+function LensGuide({ children, product, scenes }: LensGuideProps) {
   const [lens, setLens] = useState<Option>();
   const [scene, setScene] = useState<Scene>(scenes[0]);
 
@@ -34,17 +34,17 @@ function Viewer({ children, product, scenes }: ViewerProps) {
         setScene,
       }}
     >
-      <div className={s.viewer__contain}>
-        <div className={s.viewer__container}>
-          <button className={s.viewer__close}>Close</button>
-          <div className={s.viewer__content}>{nodes}</div>
+      <div className={s.lensGuide__contain}>
+        <div className={s.lensGuide__container}>
+          <button className={s.lensGuide__close}>Close</button>
+          <div className={s.lensGuide__content}>{nodes}</div>
         </div>
       </div>
     </ProductContext.Provider>
   );
 }
 
-Viewer.Options = Options;
-Viewer.Scenes = Scenes;
+LensGuide.Options = Options;
+LensGuide.Scenes = Scenes;
 
-export default Viewer;
+export default LensGuide;
