@@ -1,0 +1,27 @@
+.thumbnails__container {
+  @apply flex items-center justify-center gap-2 bg-white p-1;
+  border-radius: 9px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.thumbnails__button {
+  @apply relative flex overflow-hidden;
+  height: 52px;
+  width: 52px;
+  border-radius: 6px;
+}
+
+.thumbnails__image {
+  @apply absolute inset-0 z-0 object-cover;
+  height: 100%;
+  width: 100%;
+}
+
+.thumbnails__overlay {
+  @apply relative z-10 flex h-full w-full items-center justify-center;
+}
+
+.thumbnails__overlayIcon {
+  @apply absolute z-10;
+}
