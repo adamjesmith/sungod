@@ -79,5 +79,8 @@
     {
       "output": "./src/components"
     }
-  ]
+  ],
+  "engines": {
+    "node": ">=16.8.0"
+  }
 }
