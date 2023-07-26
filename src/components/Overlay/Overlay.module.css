@@ -1,0 +1,45 @@
+.overlay__container {
+  @apply absolute left-0 bottom-0 right-0 z-10  flex h-full w-full items-center justify-center overflow-hidden;
+}
+
+.overlay__drag {
+  @apply bg-red opacity-50;
+}
+
+.overlay__imageContainer {
+  @apply absolute left-0 bottom-0 right-0 h-full w-full overflow-hidden;
+}
+
+.overlay__image {
+  @apply absolute z-0 w-full;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.overlay__grab {
+  @apply absolute z-10 flex h-14 w-14 items-center justify-center rounded-full;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, 0);
+}
+
+.overlay__slider {
+  @apply relative z-20;
+  width: 90%;
+}
+
+input.overlay__slider[type='range'] {
+  @apply h-full appearance-none bg-transparent;
+}
+
+input.overlay__slider[type='range']::-webkit-slider-thumb {
+  @apply h-16 w-16 cursor-pointer appearance-none rounded-full;
+}
+
+input.overlay__slider[type='range']::-moz-range-thumb {
+  @apply h-16 w-16 cursor-pointer appearance-none rounded-full border-0 bg-transparent;
+}
+
+input.overlay__slider[type='range']:active + .overlay__grab {
+  background-color: rgba(255, 255, 255, 0.8);
+}
