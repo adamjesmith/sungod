@@ -8,10 +8,13 @@ interface ThumbnailProps {
   selected: boolean;
   thumbnail: Scene;
 
+  priority?: boolean;
+
   onClick: (thumbnail: Scene) => void;
 }
 
 export default function Thumbnail({
+  priority = false,
   selected,
   thumbnail,
   onClick,
@@ -23,6 +26,7 @@ export default function Thumbnail({
       onClick={() => onClick(thumbnail)}
       key={thumbnail.sceneName}
       className={s.thumbnails__button}
+      data-testid='thumbnail-button'
     >
       {selected && (
         <div className={s.thumbnails__overlay}>
@@ -32,13 +36,16 @@ export default function Thumbnail({
             width='23'
             height='12'
             alt='selected'
+            priority={priority}
           />
 
           <NextImage
             src='/images/overlay.png'
             width='52'
             height='52'
-            alt='selected'
+            alt='overlay'
+            data-testid='thumbnail-overlay'
+            priority={priority}
           />
         </div>
       )}
@@ -50,6 +57,7 @@ export default function Thumbnail({
         width='52'
         height='52'
         alt={thumbnail.sceneName}
+        priority={priority}
       />
     </button>
   );

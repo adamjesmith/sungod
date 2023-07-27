@@ -38,7 +38,7 @@ export function Scenes() {
           onClick={() => setScene(thumbnail)}
         />
       ))}
-      {/* eslint */}
+      {/* eslint-disable-next-line no-console */}
       <Thumbnails.Close onClick={() => console.log('closed')} />
     </Thumbnails>
   );
