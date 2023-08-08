@@ -24,12 +24,12 @@
 }
 
 .lensGuide__options {
-  @apply flex w-full items-start bg-white p-12;
+  @apply flex w-full flex-col items-start bg-white p-12;
   height: 50%;
 }
 
 .lensGuide__optionsSelect {
-  @apply h-auto w-full;
+  @apply m-4 h-auto w-full;
 }
 
 .lensGuide__thumbnails {
@@ -65,4 +65,24 @@
   .lensGuide__scenes {
     @apply h-full flex-row;
   }
+}
+
+.lensGuide__swatches {
+  @apply flex flex-wrap justify-start;
+  gap: 12px;
+}
+
+.lensGuide__swatch {
+  @apply flex;
+  height: 43px;
+  width: 43px;
+  border-radius: 50%;
+}
+
+.lensGuide__swatchActive {
+  @apply outline outline-2 outline-black;
+}
+
+.lensGuide__swatch:disabled {
+  @apply cursor-not-allowed opacity-50;
 }
